@@ -1,0 +1,11 @@
+---
+    version: '3'
+    services:
+      toptradelab:
+        image: jupyter/tensorflow-notebook:d113a601dbb8
+        volumes:
+          - .:/home/jovyan/
+        ports:
+          - "127.0.0.1:8888:8888"
+        command: start.sh jupyter lab
+
