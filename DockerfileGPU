@@ -1,0 +1,12 @@
+FROM sagacify/docker-base-tensorflow-gpu-image:v14
+
+ARG AWS_LIB_ACCESS_KEY
+ARG AWS_LIB_PRIVATE_KEY
+ARG AWS_LIB_REPO_REGION=eu-west-1
+ARG AWS_LIB_REPO_NAME
+
+WORKDIR /home/jovyan
+
+ADD requirements-gpu.txt /home/jovyan/requirements.txt
+
+RUN pip install -r requirements.txt
