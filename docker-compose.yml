@@ -14,6 +14,7 @@ services:
     runtime: nvidia
     volumes:
       - .:/home/jovyan/
+      - ./notebooks/start.sh:/usr/local/bin/start-notebook.sh
     ports:
       - "9999:8888"
     command: start.sh jupyter lab
