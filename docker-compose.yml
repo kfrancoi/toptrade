@@ -1,22 +1,21 @@
----
-    version: '3'
-    services:
-      toptradelab:
-        image: jupyter/tensorflow-notebook:d113a601dbb8
-        volumes:
-          - .:/home/jovyan/
-        ports:
-          - "9999:8888"
-        command: start.sh jupyter lab
-      toptradelab_gpu:
-        build:
-          context: .
-          dockerfile: DockerfileGPU
-        runtime: nvidia
-        volumes:
-          - .:/home/jovyan/
-        ports:
-          - "9999:8888"
-        command: start.sh jupyter lab
-    
+version: '3'
+services:
+  toptradelab:
+    image: jupyter/tensorflow-notebook:d113a601dbb8
+    volumes:
+      - .:/home/jovyan/
+    ports:
+      - "9999:8888"
+    command: start.sh jupyter lab
+  toptradelab_gpu:
+    build:
+      context: .
+      dockerfile: DockerfileGPU
+    runtime: nvidia
+    volumes:
+      - .:/home/jovyan/
+    ports:
+      - "9999:8888"
+    command: start.sh jupyter lab
+
 
