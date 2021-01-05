@@ -8,4 +8,15 @@
         ports:
           - "9999:8888"
         command: start.sh jupyter lab
+      toptradelab_gpu:
+        build:
+          context: .
+          dockerfile: DockerfileGPU
+        runtime: nvidia
+        volumes:
+          - .:/home/jovyan/
+        ports:
+          - "9999:8888"
+        command: start.sh jupyter lab
+    
 
